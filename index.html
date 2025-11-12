@@ -23,15 +23,51 @@
       margin: 0 auto;
       gap: 30px;
       align-items: flex-start;
-      padding: 50px 20px;
+      padding: 30px 20px;
     }
 
     .sidebar {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
+      display: none;
+    }
+
+    /* Black 3D Band */
+    .black-band {
+      background: linear-gradient(135deg, #000000 0%, #2a2a2a 50%, #000000 100%);
       padding: 20px;
-      flex: 0 0 250px;
+      box-shadow: 
+        inset 0 4px 8px rgba(0,0,0,0.5),
+        0 4px 15px rgba(0,0,0,0.4);
+      border-top: 2px solid #444;
+      border-bottom: 2px solid #444;
+      transform: perspective(1000px) rotateX(2deg);
+    }
+
+    /* Horizontal Projects Bar */
+    .horizontal-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .horizontal-project {
+      text-decoration: none;
+      padding: 10px 18px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 8px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+      transition: all 0.3s ease;
+      transform: perspective(800px) rotateY(0deg);
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .horizontal-project:hover {
+      transform: perspective(800px) rotateY(10deg) translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.5);
     }
 
     .sidebar-project {
@@ -61,7 +97,7 @@
       background: linear-gradient(90deg, #00b4ff, #ff7b00);
       color: white;
       text-align: center;
-      padding: 40px 20px;
+      padding: 20px 20px;
       border-bottom: 4px solid #0078d7;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
       width: 100%;
@@ -69,17 +105,18 @@
 
     header h1 {
       margin: 0;
-      font-size: 2.5rem;
+      font-size: 1.8rem;
     }
 
     header h3 {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: normal;
+      font-size: 1rem;
     }
 
     header p.address {
-      margin-top: 8px;
-      font-size: 1rem;
+      margin-top: 5px;
+      font-size: 0.9rem;
       font-style: italic;
       color: #f1f1f1;
     }
@@ -181,12 +218,13 @@
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 15px;
       background: linear-gradient(90deg, #00b4ff, #ff7b00);
       color: white;
       border-top: 4px solid #0078d7;
       box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
       width: 100%;
+      font-size: 0.9rem;
     }
 
     /* Sidebar Colors - Only Black, White, Violet */
@@ -204,32 +242,9 @@
       color: white;
     }
 
-    /* Bottom Projects Bar */
-    .bottom-projects {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      padding: 20px;
-      max-width: 950px;
-      margin: 0 auto;
-    }
-
-    .bottom-project {
-      text-decoration: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      text-align: center;
-      border-radius: 8px;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-      transition: all 0.3s ease;
-      transform: perspective(800px) rotateY(0deg);
-      font-size: 0.85rem;
-    }
-
-    .bottom-project:hover {
-      transform: perspective(800px) rotateY(15deg) translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    .center-content {
+      flex: 1;
+      max-width: 100%;
     }
 
     @media (max-width: 1200px) {
@@ -253,20 +268,6 @@
   </header>
 
   <div class="page-wrapper">
-    <!-- LEFT SIDEBAR -->
-    <div class="sidebar">
-      <a href="Apptest boucle/" class="sidebar-project sb-violet" target="_blank">🔄 Loop Test App</a>
-      <a href="asp.net/" class="sidebar-project sb-black" target="_blank">🌐 ASP.NET</a>
-      <a href="C#/" class="sidebar-project sb-white" target="_blank">💻 C# Projects</a>
-      <a href="capitalEtPlacement/" class="sidebar-project sb-violet" target="_blank">💰 Capital & Investment</a>
-      <a href="Class and Method/" class="sidebar-project sb-black" target="_blank">📚 Class & Method</a>
-      <a href="classeEtPattern/" class="sidebar-project sb-white" target="_blank">🎨 Class & Pattern</a>
-      <a href="classepoo/" class="sidebar-project sb-violet" target="_blank">🧩 OOP Class</a>
-      <a href="ConsoleApp1/" class="sidebar-project sb-black" target="_blank">⚙️ Console App 1</a>
-      <a href="ConsoleApp2/" class="sidebar-project sb-white" target="_blank">⚙️ Console App 2</a>
-      <a href="createPodKubenetes/" class="sidebar-project sb-violet" target="_blank">☸️ Create Pod K8s</a>
-    </div>
-
     <!-- CENTER CONTENT -->
     <div class="center-content">
       <main>
@@ -304,39 +305,47 @@
         </section>
       </main>
     </div>
+  </div>
 
-    <!-- RIGHT SIDEBAR -->
-    <div class="sidebar">
-      <a href="politique/" class="sidebar-project sb-black" target="_blank">📜 Policy</a>
-      <a href="primeNumbers/" class="sidebar-project sb-white" target="_blank">🔢 Prime Numbers</a>
-      <a href="projet/" class="sidebar-project sb-violet" target="_blank">🚀 Project</a>
-      <a href="projet jeux/" class="sidebar-project sb-black" target="_blank">🎮 Game Project</a>
-      <a href="projet-ks82/" class="sidebar-project sb-white" target="_blank">🔧 Project KS82</a>
-      <a href="projet-kubernetes/" class="sidebar-project sb-violet" target="_blank">☸️ Kubernetes Project</a>
-      <a href="projet-react/" class="sidebar-project sb-black" target="_blank">⚛️ React Project</a>
-      <a href="somme de suiteC#/" class="sidebar-project sb-white" target="_blank">➕ Sequence Sum C#</a>
-      <a href="suiteDeNombre1-100/" class="sidebar-project sb-violet" target="_blank">🔢 Number Sequence 1-100</a>
-      <a href="table des carreC#/" class="sidebar-project sb-black" target="_blank">⬛ Square Table C#</a>
+  <!-- BLACK 3D BAND WITH ALL PROJECTS -->
+  <div class="black-band">
+    <div class="horizontal-projects">
+      <a href="Apptest boucle/" class="horizontal-project sb-violet" target="_blank">🔄 Loop Test App</a>
+      <a href="asp.net/" class="horizontal-project sb-black" target="_blank">🌐 ASP.NET</a>
+      <a href="C#/" class="horizontal-project sb-white" target="_blank">💻 C# Projects</a>
+      <a href="capitalEtPlacement/" class="horizontal-project sb-violet" target="_blank">💰 Capital & Investment</a>
+      <a href="Class and Method/" class="horizontal-project sb-black" target="_blank">📚 Class & Method</a>
+      <a href="classeEtPattern/" class="horizontal-project sb-white" target="_blank">🎨 Class & Pattern</a>
+      <a href="classepoo/" class="horizontal-project sb-violet" target="_blank">🧩 OOP Class</a>
+      <a href="ConsoleApp1/" class="horizontal-project sb-black" target="_blank">⚙️ Console App 1</a>
+      <a href="ConsoleApp2/" class="horizontal-project sb-white" target="_blank">⚙️ Console App 2</a>
+      <a href="createPodKubenetes/" class="horizontal-project sb-violet" target="_blank">☸️ Create Pod K8s</a>
+      <a href="dockercomposefile/" class="horizontal-project sb-black" target="_blank">🐋 Docker Compose</a>
+      <a href="les variables/" class="horizontal-project sb-white" target="_blank">📊 Variables</a>
+      <a href="MAUI/" class="horizontal-project sb-violet" target="_blank">📱 MAUI</a>
+      <a href="NomDuProjet/" class="horizontal-project sb-black" target="_blank">📂 Project Name</a>
+      <a href="organiserCode/" class="horizontal-project sb-white" target="_blank">🗂️ Organize Code</a>
+      <a href="politique/" class="horizontal-project sb-violet" target="_blank">📜 Policy</a>
+      <a href="primeNumbers/" class="horizontal-project sb-black" target="_blank">🔢 Prime Numbers</a>
+      <a href="projet/" class="horizontal-project sb-white" target="_blank">🚀 Project</a>
+      <a href="projet jeux/" class="horizontal-project sb-violet" target="_blank">🎮 Game Project</a>
+      <a href="projet-ks82/" class="horizontal-project sb-black" target="_blank">🔧 Project KS82</a>
+      <a href="projet-kubernetes/" class="horizontal-project sb-white" target="_blank">☸️ Kubernetes Project</a>
+      <a href="projet-react/" class="horizontal-project sb-violet" target="_blank">⚛️ React Project</a>
+      <a href="somme de suiteC#/" class="horizontal-project sb-black" target="_blank">➕ Sequence Sum C#</a>
+      <a href="suiteDeNombre1-100/" class="horizontal-project sb-white" target="_blank">🔢 Number Sequence 1-100</a>
+      <a href="table des carreC#/" class="horizontal-project sb-violet" target="_blank">⬛ Square Table C#</a>
+      <a href="tableDesCarres/" class="horizontal-project sb-black" target="_blank">⬛ Squares Table</a>
+      <a href="terraform2/" class="horizontal-project sb-white" target="_blank">🌍 Terraform 2</a>
+      <a href="training c#2boucle/" class="horizontal-project sb-violet" target="_blank">🏋️ C# Loop Training</a>
+      <a href="TrainningC#/" class="horizontal-project sb-black" target="_blank">🏋️ C# Training</a>
+      <a href="UnitTestProject1/" class="horizontal-project sb-white" target="_blank">🧪 Unit Test Project</a>
+      <a href="WPF-WITH-C#/" class="horizontal-project sb-violet" target="_blank">🖥️ WPF with C#</a>
     </div>
   </div>
 
-  <!-- BOTTOM PROJECTS BAR -->
-  <div class="bottom-projects">
-    <a href="dockercomposefile/" class="bottom-project sb-violet" target="_blank">🐋 Docker Compose</a>
-    <a href="les variables/" class="bottom-project sb-black" target="_blank">📊 Variables</a>
-    <a href="MAUI/" class="bottom-project sb-white" target="_blank">📱 MAUI</a>
-    <a href="NomDuProjet/" class="bottom-project sb-violet" target="_blank">📂 Project Name</a>
-    <a href="organiserCode/" class="bottom-project sb-black" target="_blank">🗂️ Organize Code</a>
-    <a href="tableDesCarres/" class="bottom-project sb-white" target="_blank">⬛ Squares Table</a>
-    <a href="terraform2/" class="bottom-project sb-violet" target="_blank">🌍 Terraform 2</a>
-    <a href="training c#2boucle/" class="bottom-project sb-black" target="_blank">🏋️ C# Loop Training</a>
-    <a href="TrainningC#/" class="bottom-project sb-white" target="_blank">🏋️ C# Training</a>
-    <a href="UnitTestProject1/" class="bottom-project sb-violet" target="_blank">🧪 Unit Test Project</a>
-    <a href="WPF-WITH-C#/" class="bottom-project sb-black" target="_blank">🖥️ WPF with C#</a>
-  </div>
-
   <footer>
-    <p>© 2023 Guy Roger Tchoffo DevOps Engineer, Full-Stack Developer, ASP.NET MVC Model, Frontend with React  | Portfolio</p>
+    <p>© 2025 Guy Roger Tchoffo DevOps Engineer, Full-Stack Developer, ASP.NET MVC Model, Frontend with React | Portfolio</p>
   </footer>
 </body>
 </html>
