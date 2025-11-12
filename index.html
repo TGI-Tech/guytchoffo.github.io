@@ -11,6 +11,50 @@
       padding: 0;
       background-color: #f4f8fb;
       color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .page-wrapper {
+      display: flex;
+      max-width: 1600px;
+      width: 100%;
+      margin: 0 auto;
+      gap: 30px;
+      align-items: flex-start;
+      padding: 50px 20px;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      padding: 20px;
+      flex: 0 0 250px;
+    }
+
+    .sidebar-project {
+      text-decoration: none;
+      color: white;
+      padding: 12px 18px;
+      font-weight: bold;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+      transition: all 0.3s ease;
+      transform: perspective(1000px) rotateX(0deg);
+      font-size: 0.9rem;
+    }
+
+    .sidebar-project:hover {
+      transform: perspective(1000px) rotateX(10deg) translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    }
+
+    .center-content {
+      flex: 1;
+      max-width: 950px;
     }
 
     header {
@@ -20,6 +64,7 @@
       padding: 40px 20px;
       border-bottom: 4px solid #0078d7;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
     }
 
     header h1 {
@@ -32,9 +77,14 @@
       font-weight: normal;
     }
 
+    header p.address {
+      margin-top: 8px;
+      font-size: 1rem;
+      font-style: italic;
+      color: #f1f1f1;
+    }
+
     main {
-      max-width: 950px;
-      margin: 50px auto;
       background: white;
       padding: 40px;
       border-radius: 20px;
@@ -136,49 +186,124 @@
       color: white;
       border-top: 4px solid #0078d7;
       box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+    }
+
+    /* Sidebar Colors */
+    .sb1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    .sb2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+    .sb3 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+    .sb4 { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); }
+    .sb5 { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); }
+    .sb6 { background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); }
+    .sb7 { background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); }
+    .sb8 { background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%); }
+    .sb9 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+    .sb10 { background: linear-gradient(135deg, #ff6e7f 0%, #bfe9ff 100%); }
+    .sb11 { background: linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%); }
+    .sb12 { background: linear-gradient(135deg, #f77062 0%, #fe5196 100%); }
+    .sb13 { background: linear-gradient(135deg, #c471f5 0%, #fa71cd 100%); }
+    .sb14 { background: linear-gradient(135deg, #48c6ef 0%, #6f86d6 100%); }
+    .sb15 { background: linear-gradient(135deg, #feada6 0%, #f5efef 100%); }
+
+    @media (max-width: 1200px) {
+      .page-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar {
+        flex: none;
+        width: 100%;
+        max-width: 600px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Guy Roger Tchoffo</h1>
+    <p class="address">Wasaga Beach, Ontario, Canada</p>
     <h3>DevOps Engineer | Full-Stack Developer</h3>
   </header>
 
-  <main>
-    <section>
-      <p>Welcome to my portfolio. I specialize in CI/CD automation, Kubernetes, and cloud infrastructure.</p>
-    </section>
+  <div class="page-wrapper">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+      <a href="Apptest boucle/" class="sidebar-project sb1" target="_blank">🔄 Loop Test App</a>
+      <a href="asp.net/" class="sidebar-project sb2" target="_blank">🌐 ASP.NET</a>
+      <a href="C#/" class="sidebar-project sb3" target="_blank">💻 C# Projects</a>
+      <a href="capitalEtPlacement/" class="sidebar-project sb4" target="_blank">💰 Capital & Investment</a>
+      <a href="Class and Method/" class="sidebar-project sb5" target="_blank">📚 Class & Method</a>
+      <a href="classeEtPattern/" class="sidebar-project sb6" target="_blank">🎨 Class & Pattern</a>
+      <a href="classepoo/" class="sidebar-project sb7" target="_blank">🧩 OOP Class</a>
+      <a href="ConsoleApp1/" class="sidebar-project sb8" target="_blank">⚙️ Console App 1</a>
+      <a href="ConsoleApp2/" class="sidebar-project sb9" target="_blank">⚙️ Console App 2</a>
+      <a href="createPodKubenetes/" class="sidebar-project sb10" target="_blank">☸️ Create Pod K8s</a>
+      <a href="dockercomposefile/" class="sidebar-project sb11" target="_blank">🐋 Docker Compose</a>
+      <a href="les variables/" class="sidebar-project sb12" target="_blank">📊 Variables</a>
+      <a href="MAUI/" class="sidebar-project sb13" target="_blank">📱 MAUI</a>
+      <a href="NomDuProjet/" class="sidebar-project sb14" target="_blank">📂 Project Name</a>
+      <a href="organiserCode/" class="sidebar-project sb15" target="_blank">🗂️ Organize Code</a>
+    </div>
 
-    <section>
-      <h2>My Projects</h2>
-      <div class="projects">
-        <!-- LEFT (Round) Buttons -->
-        <a href="docker/" class="project-link circle c1" target="_blank">🐳 Docker Setup</a>
-        <a href="Dockerfile/" class="project-link circle c2" target="_blank">🧱 Dockerfile Config</a>
-        <a href="expresso-project/" class="project-link circle c3" target="_blank">☕ Expresso Project</a>
-        <a href="Frontendprettyprincess/" class="project-link circle c4" target="_blank">💅 Frontend Pretty Princess</a>
-        <a href="posgreSql/" class="project-link circle c5" target="_blank">🗄️ PostgreSQL Integration</a>
-        <a href="Project-Pretty/" class="project-link circle c6" target="_blank">✨ Project Pretty</a>
-        <a href="revive-project/" class="project-link circle c7" target="_blank">🔁 Revive Project</a>
+    <!-- CENTER CONTENT -->
+    <div class="center-content">
+      <main>
+        <section>
+          <p>Welcome to my portfolio. I specialize in CI/CD automation, Kubernetes, and cloud infrastructure.</p>
+        </section>
 
-        <!-- RIGHT (Rectangular) Buttons -->
-        <a href="sonarqube-projet/" class="project-link rectangle c1" target="_blank">🔍 SonarQube Analysis</a>
-        <a href="tcf/" class="project-link rectangle c2" target="_blank">⚙️ TCF System</a>
-        <a href="terraform/" class="project-link rectangle c3" target="_blank">🌍 Terraform Infrastructure</a>
-        <a href="terraform-project/" class="project-link rectangle c4" target="_blank">🏗️ Terraform Project</a>
-        <a href="PrettyPrincess/" class="project-link rectangle c5" target="_blank">👑 Pretty Princess</a>
-        <a href="PrettyPrincessMVC/" class="project-link rectangle c6" target="_blank">👑 Pretty Princess MVC</a>
-      </div>
-    </section>
+        <section>
+          <h2>My Projects</h2>
+          <div class="projects">
+            <!-- LEFT (Round) Buttons -->
+            <a href="docker/" class="project-link circle c1" target="_blank">🐳 Docker Setup</a>
+            <a href="Dockerfile/" class="project-link circle c2" target="_blank">🧱 Dockerfile Config</a>
+            <a href="expresso-project/" class="project-link circle c3" target="_blank">☕ Expresso Project</a>
+            <a href="Frontendprettyprincess/" class="project-link circle c4" target="_blank">💅 Frontend Pretty Princess</a>
+            <a href="posgreSql/" class="project-link circle c5" target="_blank">🗄️ PostgreSQL Integration</a>
+            <a href="Project-Pretty/" class="project-link circle c6" target="_blank">✨ Project Pretty</a>
+            <a href="revive-project/" class="project-link circle c7" target="_blank">🔁 Revive Project</a>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <a href="mailto:taguytgi@gmail.com">📧 Email Me</a>
-      <a href="https://www.linkedin.com/in/guyrogertchoffo/" target="_blank">💼 LinkedIn</a>
-      <a href="https://github.com/guytchoffo" target="_blank">💻 GitHub</a>
-    </section>
-  </main>
+            <!-- RIGHT (Rectangular) Buttons -->
+            <a href="sonarqube-projet/" class="project-link rectangle c1" target="_blank">🔍 SonarQube Analysis</a>
+            <a href="tcf/" class="project-link rectangle c2" target="_blank">⚙️ TCF System</a>
+            <a href="terraform/" class="project-link rectangle c3" target="_blank">🌍 Terraform Infrastructure</a>
+            <a href="terraform-project/" class="project-link rectangle c4" target="_blank">🏗️ Terraform Project</a>
+            <a href="PrettyPrincess/" class="project-link rectangle c5" target="_blank">👑 Pretty Princess</a>
+            <a href="PrettyPrincessMVC/" class="project-link rectangle c6" target="_blank">👑 Pretty Princess MVC</a>
+          </div>
+        </section>
+
+        <section class="contact">
+          <h2>Contact</h2>
+          <a href="mailto:taguytgi@gmail.com">📧 Email Me</a>
+          <a href="https://www.linkedin.com/in/guyrogertchoffo/" target="_blank">💼 LinkedIn</a>
+          <a href="https://github.com/guytchoffo" target="_blank">💻 GitHub</a>
+        </section>
+      </main>
+    </div>
+
+    <!-- RIGHT SIDEBAR -->
+    <div class="sidebar">
+      <a href="politique/" class="sidebar-project sb1" target="_blank">📜 Policy</a>
+      <a href="primeNumbers/" class="sidebar-project sb2" target="_blank">🔢 Prime Numbers</a>
+      <a href="projet/" class="sidebar-project sb3" target="_blank">🚀 Project</a>
+      <a href="projet jeux/" class="sidebar-project sb4" target="_blank">🎮 Game Project</a>
+      <a href="projet-ks82/" class="sidebar-project sb5" target="_blank">🔧 Project KS82</a>
+      <a href="projet-kubernetes/" class="sidebar-project sb6" target="_blank">☸️ Kubernetes Project</a>
+      <a href="projet-react/" class="sidebar-project sb7" target="_blank">⚛️ React Project</a>
+      <a href="somme de suiteC#/" class="sidebar-project sb8" target="_blank">➕ Sequence Sum C#</a>
+      <a href="suiteDeNombre1-100/" class="sidebar-project sb9" target="_blank">🔢 Number Sequence 1-100</a>
+      <a href="table des carreC#/" class="sidebar-project sb10" target="_blank">⬛ Square Table C#</a>
+      <a href="tableDesCarres/" class="sidebar-project sb11" target="_blank">⬛ Squares Table</a>
+      <a href="terraform2/" class="sidebar-project sb12" target="_blank">🌍 Terraform 2</a>
+      <a href="training c#2boucle/" class="sidebar-project sb13" target="_blank">🏋️ C# Loop Training</a>
+      <a href="TrainningC#/" class="sidebar-project sb14" target="_blank">🏋️ C# Training</a>
+      <a href="UnitTestProject1/" class="sidebar-project sb15" target="_blank">🧪 Unit Test Project</a>
+      <a href="WPF-WITH-C#/" class="sidebar-project sb3" target="_blank">🖥️ WPF with C#</a>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 Guy Roger Tchoffo | Portfolio</p>
