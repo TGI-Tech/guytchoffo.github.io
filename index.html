@@ -19,6 +19,7 @@
       text-align: center;
       padding: 40px 20px;
       border-bottom: 4px solid #0078d7;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     header h1 {
@@ -32,52 +33,90 @@
     }
 
     main {
-      max-width: 900px;
-      margin: 40px auto;
+      max-width: 950px;
+      margin: 50px auto;
       background: white;
       padding: 40px;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border-radius: 20px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
       border: 3px solid #00b4ff;
     }
 
     section {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     h2 {
       color: #005bbb;
       border-left: 6px solid #ff7b00;
       padding-left: 10px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
     .projects {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-content: center;
     }
 
     .project-link {
       text-decoration: none;
       color: white;
-      background-color: #0078d7;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 14px 20px;
       font-weight: bold;
-      display: inline-block;
-      transition: all 0.3s ease;
+      text-align: center;
+      border-radius: 12px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-link::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0.5), rgba(255,255,255,0));
+      opacity: 0.4;
+      transform: translateX(-100%);
+      transition: transform 0.5s ease;
+    }
+
+    .project-link:hover::after {
+      transform: translateX(100%);
     }
 
     .project-link:hover {
-      background-color: #ff7b00;
-      transform: scale(1.05);
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+
+    /* --- Button Shapes --- */
+    .circle {
+      border-radius: 50px;
+    }
+
+    .rectangle {
+      border-radius: 8px;
+    }
+
+    /* --- 7 Color Variations --- */
+    .c1 { background: linear-gradient(45deg, #00b4ff, #0095ff); }
+    .c2 { background: linear-gradient(45deg, #ff7b00, #ff9500); }
+    .c3 { background: linear-gradient(45deg, #28a745, #00c851); }
+    .c4 { background: linear-gradient(45deg, #6f42c1, #b066ff); }
+    .c5 { background: linear-gradient(45deg, #e83e8c, #ff5fa2); }
+    .c6 { background: linear-gradient(45deg, #17a2b8, #20c997); }
+    .c7 { background: linear-gradient(45deg, #ffc107, #ffcd39); color: #333; }
 
     .contact a {
       text-decoration: none;
       color: white;
-      background-color: #00b4ff;
+      background-color: #0078d7;
       padding: 10px 15px;
       border-radius: 6px;
       margin-right: 10px;
@@ -96,6 +135,7 @@
       background: linear-gradient(90deg, #00b4ff, #ff7b00);
       color: white;
       border-top: 4px solid #0078d7;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.2);
     }
   </style>
 </head>
@@ -113,19 +153,22 @@
     <section>
       <h2>My Projects</h2>
       <div class="projects">
-        <a href="docker/" class="project-link" target="_blank">🐳 Docker Setup</a>
-        <a href="Dockerfile/" class="project-link" target="_blank">🧱 Dockerfile Configuration</a>
-        <a href="expresso-project/" class="project-link" target="_blank">☕ Expresso Project</a>
-        <a href="Frontendprettyprincess/" class="project-link" target="_blank">💅 Frontend Pretty Princess</a>
-        <a href="posgreSql/" class="project-link" target="_blank">🗄️ PostgreSQL Integration</a>
-        <a href="Project-Pretty/" class="project-link" target="_blank">✨ Project Pretty</a>
-        <a href="revive-project/" class="project-link" target="_blank">🔁 Revive Project</a>
-        <a href="sonarqube-projet/" class="project-link" target="_blank">🔍 SonarQube Analysis</a>
-        <a href="tcf/" class="project-link" target="_blank">⚙️ TCF System</a>
-        <a href="terraform/" class="project-link" target="_blank">🌍 Terraform Infrastructure</a>
-        <a href="terraform-project/" class="project-link" target="_blank">🏗️ Terraform Project</a>
-        <a href="PrettyPrincess/" class="project-link" target="_blank">👑 Pretty Princess</a>
-        <a href="PrettyPrincessMVC/" class="project-link" target="_blank">👑 Pretty Princess MVC</a>
+        <!-- LEFT (Round) Buttons -->
+        <a href="docker/" class="project-link circle c1" target="_blank">🐳 Docker Setup</a>
+        <a href="Dockerfile/" class="project-link circle c2" target="_blank">🧱 Dockerfile Config</a>
+        <a href="expresso-project/" class="project-link circle c3" target="_blank">☕ Expresso Project</a>
+        <a href="Frontendprettyprincess/" class="project-link circle c4" target="_blank">💅 Frontend Pretty Princess</a>
+        <a href="posgreSql/" class="project-link circle c5" target="_blank">🗄️ PostgreSQL Integration</a>
+        <a href="Project-Pretty/" class="project-link circle c6" target="_blank">✨ Project Pretty</a>
+        <a href="revive-project/" class="project-link circle c7" target="_blank">🔁 Revive Project</a>
+
+        <!-- RIGHT (Rectangular) Buttons -->
+        <a href="sonarqube-projet/" class="project-link rectangle c1" target="_blank">🔍 SonarQube Analysis</a>
+        <a href="tcf/" class="project-link rectangle c2" target="_blank">⚙️ TCF System</a>
+        <a href="terraform/" class="project-link rectangle c3" target="_blank">🌍 Terraform Infrastructure</a>
+        <a href="terraform-project/" class="project-link rectangle c4" target="_blank">🏗️ Terraform Project</a>
+        <a href="PrettyPrincess/" class="project-link rectangle c5" target="_blank">👑 Pretty Princess</a>
+        <a href="PrettyPrincessMVC/" class="project-link rectangle c6" target="_blank">👑 Pretty Princess MVC</a>
       </div>
     </section>
 
