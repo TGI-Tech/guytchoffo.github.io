@@ -52,23 +52,32 @@
       margin-bottom: 15px;
     }
 
-    ul {
-      list-style-type: none;
-      padding: 0;
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
 
-    ul li {
-      background: #e9f5ff;
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      border-left: 4px solid #00b4ff;
-      border-radius: 5px;
+    .project-link {
+      text-decoration: none;
+      color: white;
+      background-color: #0078d7;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      display: inline-block;
+      transition: all 0.3s ease;
+    }
+
+    .project-link:hover {
+      background-color: #ff7b00;
+      transform: scale(1.05);
     }
 
     .contact a {
       text-decoration: none;
       color: white;
-      background-color: #0078d7;
+      background-color: #00b4ff;
       padding: 10px 15px;
       border-radius: 6px;
       margin-right: 10px;
@@ -102,12 +111,22 @@
     </section>
 
     <section>
-      <h2>Projects</h2>
-      <ul>
-        <li><strong>CI/CD Pipeline:</strong> Automated deployments using Jenkins, Docker, and Kubernetes.</li>
-        <li><strong>Monitoring System:</strong> Prometheus and Grafana for real-time infrastructure insights.</li>
-        <li><strong>Full-Stack App:</strong> Angular + .NET Core web application deployed on AWS.</li>
-      </ul>
+      <h2>My Projects</h2>
+      <div class="projects">
+        <a href="docker/" class="project-link" target="_blank">🐳 Docker Setup</a>
+        <a href="Dockerfile/" class="project-link" target="_blank">🧱 Dockerfile Configuration</a>
+        <a href="expresso-project/" class="project-link" target="_blank">☕ Expresso Project</a>
+        <a href="Frontendprettyprincess/" class="project-link" target="_blank">💅 Frontend Pretty Princess</a>
+        <a href="posgreSql/" class="project-link" target="_blank">🗄️ PostgreSQL Integration</a>
+        <a href="Project-Pretty/" class="project-link" target="_blank">✨ Project Pretty</a>
+        <a href="revive-project/" class="project-link" target="_blank">🔁 Revive Project</a>
+        <a href="sonarqube-projet/" class="project-link" target="_blank">🔍 SonarQube Analysis</a>
+        <a href="tcf/" class="project-link" target="_blank">⚙️ TCF System</a>
+        <a href="terraform/" class="project-link" target="_blank">🌍 Terraform Infrastructure</a>
+        <a href="terraform-project/" class="project-link" target="_blank">🏗️ Terraform Project</a>
+        <a href="PrettyPrincess/" class="project-link" target="_blank">👑 Pretty Princess</a>
+        <a href="PrettyPrincessMVC/" class="project-link" target="_blank">👑 Pretty Princess MVC</a>
+      </div>
     </section>
 
     <section class="contact">
